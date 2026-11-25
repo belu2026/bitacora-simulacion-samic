@@ -1,1 +1,1 @@
-alert("Bitácora SAMIC cargada correctamente");
+console.log("Bitácora SAMIC iniciada");
