@@ -3,140 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitácora Simulación SAMIC</title>
+<title>Bitácora SAMIC</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f5f7fb;
+background:#f4f6f9;
+display:flex;
+min-height:100vh;
 }
 
 .sidebar{
-    position:fixed;
-    left:0;
-    top:0;
-    width:240px;
-    height:100vh;
-    background:#16324f;
-    color:white;
-    padding:20px;
+width:260px;
+background:#0f2744;
+color:white;
+padding:20px;
 }
 
 .sidebar h2{
-    margin-bottom:30px;
+margin-bottom:30px;
 }
 
-.sidebar a{
-    display:block;
-    color:white;
-    text-decoration:none;
-    padding:10px;
-    border-radius:6px;
-    margin-bottom:5px;
+.menu-item{
+padding:12px;
+margin-bottom:8px;
+border-radius:8px;
+background:rgba(255,255,255,0.05);
+cursor:pointer;
 }
 
-.sidebar a:hover{
-    background:#214a73;
+.menu-item:hover{
+background:rgba(255,255,255,0.15);
 }
 
 .main{
-    margin-left:260px;
-    padding:30px;
+flex:1;
+padding:30px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:30px;
 }
 
 .card{
-    background:white;
-    border-radius:12px;
-    padding:20px;
-    margin-bottom:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-input, select, textarea{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:6px;
-}
-
-button{
-    background:#16324f;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:6px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#214a73;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .metric{
-    font-size:28px;
-    font-weight:bold;
-    color:#16324f;
+font-size:32px;
+font-weight:bold;
+color:#0f2744;
+margin-top:10px;
+}
+
+.section{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.section h2{
+margin-bottom:20px;
+color:#0f2744;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+input, select, textarea{
+width:100%;
+padding:10px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+button{
+background:#0f2744;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#1f4472;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th,
+table td{
+padding:10px;
+border-bottom:1px solid #ddd;
+text-align:left;
+}
+
+.goals-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.badge{
+background:#e8f3ff;
+color:#0f2744;
+padding:8px 12px;
+border-radius:8px;
+display:inline-block;
+margin-top:10px;
+font-weight:bold;
 }
 </style>
 
 </head>
+
 <body>
 
 <div class="sidebar">
+
 <h2>🏥 SAMIC</h2>
 
-<a href="#">Inicio</a>
-<a href="#">Mi progreso</a>
-<a href="#">Registrar sesión</a>
-<a href="#">Ejercicios</a>
-<a href="#">Instructor</a>
+<div class="menu-item">🏠 Inicio</div>
+<div class="menu-item">📈 Mi progreso</div>
+<div class="menu-item">📝 Registrar sesión</div>
+<div class="menu-item">🔬 Simulación laparoscópica</div>
+<div class="menu-item">🧵 Cirugía abierta</div>
+<div class="menu-item">👨‍🏫 Panel instructor</div>
+<div class="menu-item">📊 Dashboard</div>
 
 </div>
 
 <div class="main">
 
-<div class="card">
 <h1>Bitácora de Simulación Quirúrgica</h1>
-<p>Residencia de Cirugía General - Hospital SAMIC El Calafate</p>
-</div>
+<p>Hospital SAMIC El Calafate</p>
 
-<div class="grid">
+<br>
+
+<div class="cards">
 
 <div class="card">
-<h3>Sesiones realizadas</h3>
+<h3>Sesiones</h3>
 <div class="metric">0</div>
 </div>
 
 <div class="card">
-<h3>GOALS promedio</h3>
+<h3>GOALS Promedio</h3>
 <div class="metric">0</div>
 </div>
 
 <div class="card">
-<h3>Horas acumuladas</h3>
+<h3>Mejor Tiempo</h3>
+<div class="metric">0s</div>
+</div>
+
+<div class="card">
+<h3>Objetivos Alcanzados</h3>
 <div class="metric">0</div>
 </div>
 
 </div>
 
-<div class="card">
+<div class="section">
 
-<h2>Registrar sesión</h2>
+<h2>Registrar Sesión</h2>
 
+<div class="form-grid">
+
+<div>
 <label>Residente</label>
-<input type="text" placeholder="Nombre del residente">
+<input type="text">
+</div>
 
+<div>
+<label>Año</label>
+<select>
+<option>R1</option>
+<option>R2</option>
+<option>R3</option>
+<option>R4</option>
+</select>
+</div>
+
+<div>
+<label>Instructor</label>
+<input type="text">
+</div>
+
+<div>
+<label>Fecha</label>
+<input type="date">
+</div>
+
+<div>
 <label>Ejercicio</label>
 <select>
+
 <option>PSQ1 - Transferencia de aros</option>
 <option>PSQ2 - Manipulación de aguja</option>
 <option>PSQ3 - Nudo extracorpóreo</option>
@@ -144,6 +228,7 @@ button:hover{
 <option>PSQ5 - Sutura intracorpórea</option>
 <option>PSQ6 - Canulación conducto cístico</option>
 <option>PSQ7 - Eventroplastia laparoscópica</option>
+
 <option>Nudo instrumental</option>
 <option>Nudo manual</option>
 <option>Punto simple</option>
@@ -151,41 +236,121 @@ button:hover{
 <option>Surgete continuo</option>
 <option>Anastomosis intestinal</option>
 <option>Anastomosis vascular</option>
+
 </select>
-
-<label>Tiempo (segundos)</label>
-<input type="number">
-
-<label>Observaciones</label>
-<textarea rows="4"></textarea>
-
-<button>Guardar sesión</button>
+</div>
 
 </div>
 
-<div class="card">
+<br>
+
+<h3>Tiempos (hasta 8 repeticiones)</h3>
+
+<div class="form-grid">
+
+<input placeholder="Rep 1">
+<input placeholder="Rep 2">
+<input placeholder="Rep 3">
+<input placeholder="Rep 4">
+<input placeholder="Rep 5">
+<input placeholder="Rep 6">
+<input placeholder="Rep 7">
+<input placeholder="Rep 8">
+
+</div>
+
+<br>
+
+<label>Observaciones</label>
+
+<textarea rows="4"></textarea>
+
+<br>
+
+<button>Guardar Sesión</button>
+
+</div>
+
+<div class="section">
 
 <h2>Evaluación GOALS</h2>
 
-<label>Percepción de profundidad</label>
-<input type="number" min="1" max="5">
+<div class="goals-grid">
 
+<div>
+<label>Percepción profundidad</label>
+<input type="number" min="1" max="5">
+</div>
+
+<div>
 <label>Destreza bimanual</label>
 <input type="number" min="1" max="5">
+</div>
 
+<div>
 <label>Eficiencia</label>
 <input type="number" min="1" max="5">
+</div>
 
+<div>
 <label>Manejo tisular</label>
 <input type="number" min="1" max="5">
+</div>
 
+<div>
 <label>Autonomía</label>
 <input type="number" min="1" max="5">
+</div>
+
+</div>
+
+<div class="badge">
+GOALS TOTAL: 0 / 25
+</div>
+
+<br><br>
 
 <label>Debriefing</label>
+
 <textarea rows="5"></textarea>
 
-<button>Guardar evaluación</button>
+<br>
+
+<button>Guardar Evaluación</button>
+
+</div>
+
+<div class="section">
+
+<h2>Historial de Sesiones</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Fecha</th>
+<th>Residente</th>
+<th>Ejercicio</th>
+<th>Tiempo</th>
+<th>GOALS</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+
+</tbody>
+
+</table>
 
 </div>
 
