@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitácora Simulación SAMIC</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7fb;
+}
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:240px;
+    height:100vh;
+    background:#16324f;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    margin-bottom:30px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border-radius:6px;
+    margin-bottom:5px;
+}
+
+.sidebar a:hover{
+    background:#214a73;
+}
+
+.main{
+    margin-left:260px;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:6px;
+}
+
+button{
+    background:#16324f;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#214a73;
+}
+
+.metric{
+    font-size:28px;
+    font-weight:bold;
+    color:#16324f;
+}
+</style>
+
+</head>
+<body>
+
+<div class="sidebar">
+<h2>🏥 SAMIC</h2>
+
+<a href="#">Inicio</a>
+<a href="#">Mi progreso</a>
+<a href="#">Registrar sesión</a>
+<a href="#">Ejercicios</a>
+<a href="#">Instructor</a>
+
+</div>
+
+<div class="main">
+
+<div class="card">
+<h1>Bitácora de Simulación Quirúrgica</h1>
+<p>Residencia de Cirugía General - Hospital SAMIC El Calafate</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Sesiones realizadas</h3>
+<div class="metric">0</div>
+</div>
+
+<div class="card">
+<h3>GOALS promedio</h3>
+<div class="metric">0</div>
+</div>
+
+<div class="card">
+<h3>Horas acumuladas</h3>
+<div class="metric">0</div>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Registrar sesión</h2>
+
+<label>Residente</label>
+<input type="text" placeholder="Nombre del residente">
+
+<label>Ejercicio</label>
+<select>
+<option>PSQ1 - Transferencia de aros</option>
+<option>PSQ2 - Manipulación de aguja</option>
+<option>PSQ3 - Nudo extracorpóreo</option>
+<option>PSQ4 - Endoloop</option>
+<option>PSQ5 - Sutura intracorpórea</option>
+<option>PSQ6 - Canulación conducto cístico</option>
+<option>PSQ7 - Eventroplastia laparoscópica</option>
+<option>Nudo instrumental</option>
+<option>Nudo manual</option>
+<option>Punto simple</option>
+<option>Donati</option>
+<option>Surgete continuo</option>
+<option>Anastomosis intestinal</option>
+<option>Anastomosis vascular</option>
+</select>
+
+<label>Tiempo (segundos)</label>
+<input type="number">
+
+<label>Observaciones</label>
+<textarea rows="4"></textarea>
+
+<button>Guardar sesión</button>
+
+</div>
+
+<div class="card">
+
+<h2>Evaluación GOALS</h2>
+
+<label>Percepción de profundidad</label>
+<input type="number" min="1" max="5">
+
+<label>Destreza bimanual</label>
+<input type="number" min="1" max="5">
+
+<label>Eficiencia</label>
+<input type="number" min="1" max="5">
+
+<label>Manejo tisular</label>
+<input type="number" min="1" max="5">
+
+<label>Autonomía</label>
+<input type="number" min="1" max="5">
+
+<label>Debriefing</label>
+<textarea rows="5"></textarea>
+
+<button>Guardar evaluación</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
