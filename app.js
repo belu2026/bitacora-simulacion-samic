@@ -15,11 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const fila = document.createElement("tr");
 
             fila.innerHTML = `
-                <td>${sesion.fecha}</td>
-                <td>${sesion.residente}</td>
-                <td>${sesion.ejercicio}</td>
-                <td>${sesion.goals}</td>
-            `;
+    <td>${sesion.fecha}</td>
+    <td>${sesion.residente}</td>
+    <td>${sesion.ejercicio}</td>
+    <td>${sesion.mejorTiempo}</td>
+    <td>${sesion.promedio}</td>
+    <td>${sesion.goals}</td>
+`;
 
             tabla.appendChild(fila);
 
@@ -50,12 +52,35 @@ document.addEventListener("DOMContentLoaded", () => {
         const ejercicio =
             document.querySelectorAll("select")[1].value;
 
-        const nuevaSesion = {
-            fecha: fecha,
-            residente: residente,
-            ejercicio: ejercicio,
-            goals: "Pendiente"
-        };
+        const tiempos = [
+
+Number(document.getElementById("rep1").value) || 0,
+Number(document.getElementById("rep2").value) || 0,
+Number(document.getElementById("rep3").value) || 0,
+Number(document.getElementById("rep4").value) || 0,
+Number(document.getElementById("rep5").value) || 0,
+Number(document.getElementById("rep6").value) || 0,
+Number(document.getElementById("rep7").value) || 0,
+Number(document.getElementById("rep8").value) || 0
+
+].filter(t => t > 0);
+
+const mejorTiempo =
+    tiempos.length > 0 ? Math.min(...tiempos) : "-";
+
+const promedio =
+    tiempos.length > 0
+    ? (tiempos.reduce((a,b)=>a+b,0) / tiempos.length).toFixed(2)
+    : "-";
+
+const nuevaSesion = {
+    fecha: fecha,
+    residente: residente,
+    ejercicio: ejercicio,
+    mejorTiempo: mejorTiempo,
+    promedio: promedio,
+    goals: "Pendiente"
+};
 
         const sesiones =
             JSON.parse(localStorage.getItem("sesiones")) || [];
