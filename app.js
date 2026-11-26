@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
             fila.innerHTML = `
          <td>${sesion.fecha}</td>
          <td>${sesion.residente}</td>
+         <td>${sesion.anio || "-"}</td>
+         <td>${sesion.instructor || "-"}</td>
          <td>${sesion.ejercicio}</td>
          <td>${sesion.mejorTiempo || "-"}</td>
          <td>${sesion.promedio || "-"}</td>
@@ -120,10 +122,9 @@ const promedio =
 const nuevaSesion = {
     fecha: fecha,
     residente: residente,
+    anio: anio,
+    instructor: instructor,
     ejercicio: ejercicio,
-    mejorTiempo: mejorTiempo,
-    promedio: promedio,
-    goals: "Pendiente"
 };
 
         const sesiones =
