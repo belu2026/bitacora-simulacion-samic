@@ -4,17 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     botonGuardar.addEventListener("click", () => {
 
-        const residente = document.querySelector("input[type='text']").value;
-        const fecha = document.querySelector("input[type='date']").value;
-        const ejercicio = document.querySelector("select").value;
-
         const tabla = document.querySelector("tbody");
 
         tabla.innerHTML += `
         <tr>
-            <td>${fecha}</td>
-            <td>${residente}</td>
-            <td>${ejercicio}</td>
+            <td>2026-11-25</td>
+            <td>Belén</td>
+            <td>PSQ1</td>
             <td>Pendiente</td>
         </tr>
         `;
