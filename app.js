@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
          <td>${sesion.anio || "-"}</td>
          <td>${sesion.instructor || "-"}</td>
          <td>${sesion.ejercicio}</td>
+         <td>${sesion.intentos || "-"}</td>
          <td>${sesion.mejorTiempo || "-"}</td>
          <td>${sesion.promedio || "-"}</td>
          <td>${sesion.goals}</td>
@@ -115,6 +116,7 @@ const mejorTiempo =
     tiempos.length > 0 ? Math.min(...tiempos) : "-";
 
 const promedio =
+const intentos = tiempos.length;
     tiempos.length > 0
     ? (tiempos.reduce((a,b)=>a+b,0) / tiempos.length).toFixed(2)
     : "-";
@@ -125,6 +127,10 @@ const nuevaSesion = {
     anio: anio,
     instructor: instructor,
     ejercicio: ejercicio,
+    intentos: intentos,
+    mejorTiempo: mejorTiempo,
+    promedio: promedio,
+    goals: "Pendiente"
 };
 
         const sesiones =
