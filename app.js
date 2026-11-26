@@ -75,18 +75,33 @@ if (tiemposValidos.length > 0) {
         const ejercicio =
             document.querySelectorAll("select")[1].value;
 
-        const tiempos = [
+        function convertirASegundos(tiempo) {
 
-         Number(document.getElementById("rep1").value) || 0,
-         Number(document.getElementById("rep2").value) || 0,
-         Number(document.getElementById("rep3").value) || 0,
-         Number(document.getElementById("rep4").value) || 0,
-         Number(document.getElementById("rep5").value) || 0,
-         Number(document.getElementById("rep6").value) || 0,
-         Number(document.getElementById("rep7").value) || 0,
-         Number(document.getElementById("rep8").value) || 0
+    if (!tiempo) return 0;
 
-         ].filter(t => t > 0);
+    const partes = tiempo.split(":");
+
+    if (partes.length !== 2) return 0;
+
+    const minutos = parseInt(partes[0]);
+    const segundos = parseInt(partes[1]);
+
+    return (minutos * 60) + segundos;
+
+}
+
+const tiempos = [
+
+convertirASegundos(document.getElementById("rep1").value),
+convertirASegundos(document.getElementById("rep2").value),
+convertirASegundos(document.getElementById("rep3").value),
+convertirASegundos(document.getElementById("rep4").value),
+convertirASegundos(document.getElementById("rep5").value),
+convertirASegundos(document.getElementById("rep6").value),
+convertirASegundos(document.getElementById("rep7").value),
+convertirASegundos(document.getElementById("rep8").value)
+
+].filter(t => t > 0);
 
 const mejorTiempo =
     tiempos.length > 0 ? Math.min(...tiempos) : "-";
