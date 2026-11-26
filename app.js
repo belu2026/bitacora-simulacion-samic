@@ -32,6 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 tarjetaSesiones.textContent = sesiones.length;
 
+        const tarjetaMejorTiempo =
+    document.getElementById("mejorTiempoGlobal");
+
+const tiemposValidos = sesiones
+    .map(s => Number(s.mejorTiempo))
+    .filter(t => !isNaN(t) && t > 0);
+
+if (tiemposValidos.length > 0) {
+
+    tarjetaMejorTiempo.textContent =
+        Math.min(...tiemposValidos);
+
+} else {
+
+    tarjetaMejorTiempo.textContent = "-";
+
+}
+
         if (sesiones.length === 0) {
 
             tabla.innerHTML = `
