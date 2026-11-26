@@ -115,8 +115,9 @@ convertirASegundos(document.getElementById("rep8").value)
 const mejorTiempo =
     tiempos.length > 0 ? Math.min(...tiempos) : "-";
 
-const promedio =
 const intentos = tiempos.length;
+
+const promedio =
     tiempos.length > 0
     ? (tiempos.reduce((a,b)=>a+b,0) / tiempos.length).toFixed(2)
     : "-";
