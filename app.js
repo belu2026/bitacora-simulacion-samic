@@ -68,8 +68,14 @@ if (tiemposValidos.length > 0) {
     botonGuardar.addEventListener("click", () => {
 
         const residente = document.querySelectorAll("input")[0].value;
+        
+        const anio =
+            document.querySelectorAll("select")[0].value;
 
-        const fecha =
+        const instructor =
+            document.querySelectorAll("input")[1].value;
+        
+            const fecha =
             document.querySelector("input[type='date']").value;
 
         const ejercicio =
