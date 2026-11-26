@@ -1,13 +1,26 @@
-console.log("Bitácora SAMIC iniciada");
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  const botonGuardar = document.querySelector("button");
+    const botonGuardar = document.getElementById("guardarBtn");
 
-  botonGuardar.addEventListener("click", () => {
+    botonGuardar.addEventListener("click", () => {
 
-    alert("Sesión registrada correctamente");
+        const residente = document.querySelector("input[type='text']").value;
+        const fecha = document.querySelector("input[type='date']").value;
+        const ejercicio = document.querySelector("select").value;
 
-  });
+        const tabla = document.querySelector("tbody");
+
+        tabla.innerHTML += `
+        <tr>
+            <td>${fecha}</td>
+            <td>${residente}</td>
+            <td>${ejercicio}</td>
+            <td>Pendiente</td>
+        </tr>
+        `;
+
+        alert("Sesión registrada correctamente");
+
+    });
 
 });
