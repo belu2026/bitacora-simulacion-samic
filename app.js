@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const fila = document.createElement("tr");
 
             fila.innerHTML = `
-    <td>${sesion.fecha}</td>
-    <td>${sesion.residente}</td>
-    <td>${sesion.ejercicio}</td>
-    <td>${sesion.mejorTiempo}</td>
-    <td>${sesion.promedio}</td>
-    <td>${sesion.goals}</td>
-`;
+         <td>${sesion.fecha}</td>
+         <td>${sesion.residente}</td>
+         <td>${sesion.ejercicio}</td>
+         <td>${sesion.mejorTiempo || "-"}</td>
+         <td>${sesion.promedio || "-"}</td>
+         <td>${sesion.goals}</td>
+         `;
 
             tabla.appendChild(fila);
 
@@ -54,16 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const tiempos = [
 
-Number(document.getElementById("rep1").value) || 0,
-Number(document.getElementById("rep2").value) || 0,
-Number(document.getElementById("rep3").value) || 0,
-Number(document.getElementById("rep4").value) || 0,
-Number(document.getElementById("rep5").value) || 0,
-Number(document.getElementById("rep6").value) || 0,
-Number(document.getElementById("rep7").value) || 0,
-Number(document.getElementById("rep8").value) || 0
+         Number(document.getElementById("rep1").value) || 0,
+         Number(document.getElementById("rep2").value) || 0,
+         Number(document.getElementById("rep3").value) || 0,
+         Number(document.getElementById("rep4").value) || 0,
+         Number(document.getElementById("rep5").value) || 0,
+         Number(document.getElementById("rep6").value) || 0,
+         Number(document.getElementById("rep7").value) || 0,
+         Number(document.getElementById("rep8").value) || 0
 
-].filter(t => t > 0);
+         ].filter(t => t > 0);
 
 const mejorTiempo =
     tiempos.length > 0 ? Math.min(...tiempos) : "-";
