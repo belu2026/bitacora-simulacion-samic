@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+        const tarjetaSesiones =
+    document.getElementById("totalSesiones");
+
+tarjetaSesiones.textContent = sesiones.length;
+
         if (sesiones.length === 0) {
 
             tabla.innerHTML = `
