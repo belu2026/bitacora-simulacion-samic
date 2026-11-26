@@ -1,22 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const botonGuardar = document.getElementById("guardarBtn");
+    const tabla = document.querySelector("tbody");
 
-    botonGuardar.addEventListener("click", () => {
+    function cargarSesiones() {
 
-        const tabla = document.querySelector("tbody");
+        const sesiones =
+            JSON.parse(localStorage.getItem("sesiones")) || [];
 
-        tabla.innerHTML += `
-        <tr>
-            <td>2026-11-25</td>
-            <td>Belén</td>
-            <td>PSQ1</td>
-            <td>Pendiente</td>
-        </tr>
-        `;
+        tabla.innerHTML = "";
 
-        alert("Sesión registrada correctamente");
+        sesiones.forEach((sesion) => {
 
-    });
+            tabla.innerHTML += `
+            <tr>
+                <td>${sesion.fecha}</td>
+                <td>${sesion.residente}</td>
+                <td>${sesion.ejercicio}</td>
+                <td>${sesion.goals}</td>
+            </tr>
+            `;
 
-});
+        });
