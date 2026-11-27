@@ -38,9 +38,28 @@ tarjetaSesiones.textContent = sesiones.length;
         const tarjetaMejorTiempo =
     document.getElementById("mejorTiempoGlobal");
 
+function convertirATotalSegundos(texto) {
+
+    if (!texto || texto === "-") return null;
+
+    if (texto.includes(":")) {
+
+        const partes = texto.split(":");
+
+        return (
+            parseInt(partes[0]) * 60 +
+            parseInt(partes[1])
+        );
+
+    }
+
+    return Number(texto);
+
+}
+
 const tiemposValidos = sesiones
-    .map(s => Number(s.mejorTiempo))
-    .filter(t => !isNaN(t) && t > 0);
+    .map(s => convertirATotalSegundos(s.mejorTiempo))
+    .filter(t => t !== null && !isNaN(t));
 
 if (tiemposValidos.length > 0) {
 
