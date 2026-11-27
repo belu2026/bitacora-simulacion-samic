@@ -134,7 +134,11 @@ const intentos = tiempos.length;
 
 const promedio =
     tiempos.length > 0
-    ? (tiempos.reduce((a,b)=>a+b,0) / tiempos.length).toFixed(2)
+    ? convertirAMMSS(
+        Math.round(
+            tiempos.reduce((a,b)=>a+b,0) / tiempos.length
+        )
+      )
     : "-";
 
 const nuevaSesion = {
