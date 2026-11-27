@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("goalsTotal").textContent =
         "GOALS TOTAL: " + total + "/25";
 }
+document.getElementById("goal1").addEventListener("input", actualizarGoals);
+document.getElementById("goal2").addEventListener("input", actualizarGoals);
+document.getElementById("goal3").addEventListener("input", actualizarGoals);
+document.getElementById("goal4").addEventListener("input", actualizarGoals);
+document.getElementById("goal5").addEventListener("input", actualizarGoals);
 
     function cargarSesiones() {
 
