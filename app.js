@@ -2,6 +2,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const botonGuardar = document.getElementById("guardarBtn");
     const tabla = document.querySelector("tbody");
+    function actualizarGoals() {
+
+    const goal1 =
+        Number(document.getElementById("goal1").value) || 0;
+
+    const goal2 =
+        Number(document.getElementById("goal2").value) || 0;
+
+    const goal3 =
+        Number(document.getElementById("goal3").value) || 0;
+
+    const goal4 =
+        Number(document.getElementById("goal4").value) || 0;
+
+    const goal5 =
+        Number(document.getElementById("goal5").value) || 0;
+
+    const total =
+        goal1 + goal2 + goal3 + goal4 + goal5;
+
+    document.getElementById("goalsTotal").textContent =
+        "GOALS TOTAL: " + total + "/25";
+}
 
     function cargarSesiones() {
 
