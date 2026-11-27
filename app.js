@@ -63,8 +63,15 @@ const tiemposValidos = sesiones
 
 if (tiemposValidos.length > 0) {
 
-    tarjetaMejorTiempo.textContent =
-        Math.min(...tiemposValidos);
+    const mejor = Math.min(...tiemposValidos);
+
+const minutos = Math.floor(mejor / 60);
+const segundos = mejor % 60;
+
+tarjetaMejorTiempo.textContent =
+    String(minutos).padStart(2,"0")
+    + ":"
+    + String(segundos).padStart(2,"0");
 
 } else {
 
