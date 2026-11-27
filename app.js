@@ -195,9 +195,8 @@ const nuevaSesion = {
     mejorTiempo: mejorTiempo,
     promedio: promedio,
     goals: goalsTotal + "/25"
-};
-botonGuardar.addEventListener("click", () => {
-    
+}
+
         const sesiones =
             JSON.parse(localStorage.getItem("sesiones")) || [];
 
