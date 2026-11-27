@@ -167,6 +167,24 @@ const promedio =
       )
     : "-";
 
+    const goal1 =
+    Number(document.getElementById("goal1").value) || 0;
+
+const goal2 =
+    Number(document.getElementById("goal2").value) || 0;
+
+const goal3 =
+    Number(document.getElementById("goal3").value) || 0;
+
+const goal4 =
+    Number(document.getElementById("goal4").value) || 0;
+
+const goal5 =
+    Number(document.getElementById("goal5").value) || 0;
+
+const goalsTotal =
+    goal1 + goal2 + goal3 + goal4 + goal5;
+
 const nuevaSesion = {
     fecha: fecha,
     residente: residente,
@@ -176,7 +194,7 @@ const nuevaSesion = {
     intentos: intentos,
     mejorTiempo: mejorTiempo,
     promedio: promedio,
-    goals: "Pendiente"
+    goals: goalsTotal + "/25"
 };
 
         const sesiones =
