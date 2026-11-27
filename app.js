@@ -112,8 +112,23 @@ convertirASegundos(document.getElementById("rep8").value)
 
 ].filter(t => t > 0);
 
+function convertirAMMSS(segundos) {
+
+    const minutos = Math.floor(segundos / 60);
+    const restoSegundos = segundos % 60;
+
+    return (
+        String(minutos).padStart(2, "0") +
+        ":" +
+        String(restoSegundos).padStart(2, "0")
+    );
+}
+
 const mejorTiempo =
-    tiempos.length > 0 ? Math.min(...tiempos) : "-";
+    tiempos.length > 0
+    ? convertirAMMSS(Math.min(...tiempos))
+    : "-";
+
 
 const intentos = tiempos.length;
 
